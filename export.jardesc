@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="no"?>
+<jardesc>
+    <jar path="/Users/user/Desktop/Miscellaneous/SpongeDevelopment/SpigotServer/plugins/CreativeFun-Core.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/CreativeFun-Core/export.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/CreativeFun-Core/.classpath"/>
+        <javaElement handleIdentifier="=CreativeFun-Core/src"/>
+        <file path="/CreativeFun-Core/.project"/>
+    </selectedElements>
+</jardesc>

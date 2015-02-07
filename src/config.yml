@@ -1,0 +1,12 @@
+# Manage chat control features here
+chat-control:
+  # Set this to true to enable full functionality of this feature
+  enable-functionality: true
+  # The message you want to send if a player sends a rude message
+  warn-message: '&cPlease do not bypass chat filter.'
+  # The list of words you want to filter from chat
+  blacklisted-words:
+  - 'fuck'
+  - 'dick'
+  - 'retard'
+  
