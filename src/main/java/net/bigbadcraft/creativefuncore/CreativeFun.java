@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import main.java.net.bigbadcraft.creativefuncore.chatcontrol.ChatControlListener;
+import main.java.net.bigbadcraft.creativefuncore.yourfriends.FriendManager;
 import net.milkbowl.vault.chat.Chat;
 
 import org.bukkit.Bukkit;
@@ -16,10 +17,20 @@ public class CreativeFun extends JavaPlugin {
 
 	public static Chat chat = null;
 	
+	/* YourFriends Config Handlers */
+	public ConfigHandler friendsCfg;
+	public ConfigHandler pendingCfg;
+	
+	private FriendManager friendMang;
+	
 	private List<Listener> listeners = new ArrayList<Listener>();
+	private List<ConfigHandler> cfgHandlers = new ArrayList<ConfigHandler>();
 	
 	public void onEnable() {
 		saveDefaultConfig();
+		loadConfigs();
+		
+		friendMang = new FriendManager(this);
 		
 		if (Bukkit.getPluginManager().getPlugin("Vault") != null) {
 			setupChat();
@@ -38,6 +49,18 @@ public class CreativeFun extends JavaPlugin {
 		}
 	}
 	
+	private void loadConfigs() {
+		friendsCfg = new ConfigHandler(this, "friends.yml");
+		pendingCfg = new ConfigHandler(this, "pendingfriends.yml");
+		
+		cfgHandlers.add(friendsCfg);
+		cfgHandlers.add(pendingCfg);
+		
+		for (ConfigHandler cfgs : cfgHandlers) {
+			cfgs.load();
+		}
+	}
+	
 	private boolean setupChat() {
         RegisteredServiceProvider<Chat> chatProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.chat.Chat.class);
         if (chatProvider != null) {
@@ -45,5 +68,9 @@ public class CreativeFun extends JavaPlugin {
         }
         return (chat != null);
     }
+	
+	public FriendManager getFriendManager() {
+		return friendMang;
+	}
 	
 }

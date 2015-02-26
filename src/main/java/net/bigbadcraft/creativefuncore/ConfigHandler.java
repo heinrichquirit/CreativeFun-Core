@@ -66,7 +66,7 @@ public class ConfigHandler {
 		return file;
 	}
 	
-	public FileConfiguration getConfig() {
+	public FileConfiguration getCfg() {
 		return configuration;
 	}
 	
